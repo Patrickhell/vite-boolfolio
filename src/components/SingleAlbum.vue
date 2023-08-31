@@ -1,8 +1,7 @@
 <template>
     <div>
-      <h1> Albums</h1>
-        <div class="albums">
-            <div  v-for="album in albums" :key ="album">
+        <div>
+            <div>
                 <div class="card " style="width: 20rem;">
                     <div class="card-body">
                         <img v-if="album.image.startsWith('http')" :src="album.image" alt="" >
@@ -23,46 +22,19 @@
 </template>
   
 <script>
-  import axios from 'axios';
+ 
   export default {
-      name: 'AppMain',
-  
-      data(){
-          return {
-              albums : [],
-              apiUrl:'http://127.0.0.1:8000/api/albums',
-          }
+      name: 'SingleAlbum',
+      props : {
+        
+        'album': Object
       },
   
-  
-      methods: {
-          getAlbums(){
-              axios.get(this.apiUrl, {
-                  params: {}
-              })
-              .then((response) => {
-                  console.log(response.data.results.data)
-                 this.albums = response.data.results.data;
-              })
-              .catch(function (error) {
-                  console.log(error);
-              })
-          }
-        },
-  
-      created(){
-          this.getAlbums();
-      }
   }
 </script>
   
   <style lang="scss" scoped>
-   div.albums{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-   }
+   
 
    div.card{
             width: calc((100% / 3) - 1rem);
