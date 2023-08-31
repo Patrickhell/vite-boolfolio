@@ -3,10 +3,10 @@
         <div class="card-body">
             <img v-if="album.image.startsWith('http')" :src="album.image" alt="" >
             <div class="card-body" style="height: 12rem;">
-                <p> Singer Name's: {{ album.singer_name }}</p>
-                <p>Title : {{ album.title }}</p>
-                <p>Category : {{ album.album_type.name }}</p>
-                <p> Genre : {{ album.genres }}</p>
+                <p class="text-start"> Singer Name's: <span class="font-size ">{{ album.singer_name }}</span></p>
+                <p>Title : <span class="font-size ">  {{ album.title }}</span></p> 
+                <p>Category : <span class="font-size ">{{ album.album_type.name }} </span></p>
+                <p> Genre : <span class="font-size "> {{ album.genres }}</span></p>
                 <p v-for="technology in album.technologies" :key="technology"> {{technology.name}}</p>
             </div>
         </div>   
@@ -41,5 +41,9 @@
                 width: 100%;
                 object-fit: cover;
             }
+   }
+
+   .font-size{
+    font-size: 12px;
    }
   </style>
