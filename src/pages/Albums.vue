@@ -3,6 +3,17 @@
         <SingleAlbum  v-for="album in albums" :album="album" :key ="album"
         @click="$router.push({ name: 'albums.show', params: { slug: album.slug} })"  />
     </div>
+
+    <ul class="">
+        <li @click="prevPage" v-if="prevPageUrl">
+            <i class="fa-solid fa-angle-left"></i>
+            <p>Previous</p>
+        </li>
+        <li @click="nextPage" v-if="nextPageUrl">
+            <i class="fa-solid fa-angle-right"></i>
+            <p>Next</p>
+        </li>
+    </ul>
   </template>
   
   <script>
@@ -17,6 +28,9 @@
     data(){
           return {
               albums : [],
+              prevPageUrl : '',
+              currentPageNo:'',
+              nextPageUrl: '',
               apiUrl:'http://127.0.0.1:8000/api/albums',
           }
       },
@@ -28,12 +42,25 @@
               .then((response) => {
                   console.log(response.data.results.data)
                  this.albums = response.data.results.data;
+                 this.prevPageUrl = response.data.results.prev_page_url;
+                 this.nextPageUrl = response.data.results.next_page_url;
               })
               .catch(function (error) {
                   console.log(error);
               })
-          }
+          },
+
+          prevPage(){
+                this.getAlbums(this.prevPageUrl);
+            },
+
+            nextPage(){
+                this.getAlbums(this.nextPageUrl)
+            },
+
         },
+
+            
   
       created(){
           this.getAlbums();
@@ -54,5 +81,21 @@ div.album{
         align-items: center;
         flex-wrap: wrap;
    }
+
+   ul{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 2rem;
+            list-style-type: none;
+
+            li{
+                margin-right: 2rem;
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
   
   </style>
