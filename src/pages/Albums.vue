@@ -1,6 +1,7 @@
 <template>
     <div class="album">
-        <SingleAlbum  v-for="album in albums" :album="album" :key ="album" />
+        <SingleAlbum  v-for="album in albums" :album="album" :key ="album"
+        @click="$router.push({ name: 'albums.show', params: { slug: album.slug} })"  />
     </div>
   </template>
   
@@ -22,10 +23,8 @@
   
   
       methods: {
-          getAlbums(){
-              axios.get(this.apiUrl, {
-                  params: {}
-              })
+          getAlbums(apiUrl = this.apiUrl){
+              axios.get(apiUrl)
               .then((response) => {
                   console.log(response.data.results.data)
                  this.albums = response.data.results.data;

@@ -26,7 +26,7 @@ const router = createRouter({
         },
 
         {
-            path :'/Albums/ :slug',
+            path :'/albums/:slug',
             name : 'albums.show',
             component : AlbumShow,
 

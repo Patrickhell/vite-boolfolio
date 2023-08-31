@@ -1,23 +1,15 @@
 <template>
-    <div>
-        <div>
-            <div>
-                <div class="card " style="width: 20rem;">
-                    <div class="card-body">
-                        <img v-if="album.image.startsWith('http')" :src="album.image" alt="" >
-                        <div class="card-body" style="height: 12rem;">
-                            <p> Singer Name's: {{ album.singer_name }}</p>
-                            <p>Title : {{ album.title }}</p>
-                            <p>Category : {{ album.album_type.name }}</p>
-                            <p> Genre : {{ album.genres }}</p>
-                            <p v-for="technology in album.technologies" :key="technology"> {{technology.name}}</p>
-
-                        </div>
-                           
-                    </div>
-                </div>   
+    <div class="card album-card" style="width: 20rem;">
+        <div class="card-body">
+            <img v-if="album.image.startsWith('http')" :src="album.image" alt="" >
+            <div class="card-body" style="height: 12rem;">
+                <p> Singer Name's: {{ album.singer_name }}</p>
+                <p>Title : {{ album.title }}</p>
+                <p>Category : {{ album.album_type.name }}</p>
+                <p> Genre : {{ album.genres }}</p>
+                <p v-for="technology in album.technologies" :key="technology"> {{technology.name}}</p>
             </div>
-        </div>
+        </div>   
     </div>
 </template>
   
@@ -34,9 +26,8 @@
 </script>
   
   <style lang="scss" scoped>
-   
 
-   div.card{
+   div.album-card{
             width: calc((100% / 3) - 1rem);
             height: auto;
             border-radius: 1rem;
