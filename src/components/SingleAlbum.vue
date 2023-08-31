@@ -5,7 +5,8 @@
             <div  v-for="album in albums" :key ="album">
                 <div class="card " style="width: 20rem;">
                     <div class="card-body">
-                        <div class="card-body">
+                        <img v-if="album.image.startsWith('http')" :src="album.image" alt="" >
+                        <div class="card-body" style="height: 12rem;">
                             <p> Singer Name's: {{ album.singer_name }}</p>
                             <p>Title : {{ album.title }}</p>
                             <p>Category : {{ album.album_type.name }}</p>
@@ -19,9 +20,9 @@
             </div>
         </div>
     </div>
-  </template>
+</template>
   
-  <script>
+<script>
   import axios from 'axios';
   export default {
       name: 'AppMain',
@@ -47,15 +48,15 @@
                   console.log(error);
               })
           }
-      },
+        },
   
       created(){
           this.getAlbums();
       }
   }
-  </script>
+</script>
   
-  <style lang="scss">
+  <style lang="scss" scoped>
    div.albums{
         display: flex;
         justify-content: center;
@@ -65,12 +66,17 @@
 
    div.card{
             width: calc((100% / 3) - 1rem);
-            height: 300px;
+            height: auto;
             border-radius: 1rem;
             margin-right: 1rem;
             background-color: rgb(189, 197, 211);
             color: black;
             margin-bottom: 2rem;
 
+
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
    }
   </style>

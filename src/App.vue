@@ -1,13 +1,13 @@
 <script >
 import AppHeader from './components/AppHeader.vue'
-import AppMain from './components/AppMain.vue'
+//import SingleAlbum from './components/SingleAlbum.vue';
 
 export default{
 
   name :'App',
   components: {
     AppHeader,
-     AppMain,
+    //SingleAlbum,
   }
 }
 
@@ -15,7 +15,9 @@ export default{
 
 <template>
   <AppHeader />
-  <AppMain />
+  <router-view>
+
+  </router-view>
   
 </template>
 
