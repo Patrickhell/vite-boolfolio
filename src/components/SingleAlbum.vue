@@ -8,7 +8,8 @@
                 <p>Title : <span class="font-size ">  {{ album.title }}</span></p> 
                 <p>Category : <span class="font-size ">{{ album.album_type.name }} </span></p>
                 <p> Genre : <span class="font-size "> {{ album.genres }}</span></p>
-                <p v-for="technology in album.technologies" :key="technology"> {{technology.name}}</p>
+                <span>Technologies: </span>
+                <span class="font-size " v-for="technology in album.technologies" :key="technology"> {{technology.name}} ,</span>
             </div>
         </div>   
     </div>
@@ -30,7 +31,6 @@
 
    div.album-card{
             width: calc((100% / 3) - 1rem);
-            height: auto;
             border-radius: 1rem;
             margin-right: 1rem;
             background-color: rgb(189, 197, 211);

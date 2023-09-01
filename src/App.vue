@@ -14,10 +14,14 @@ export default{
 </script>
 
 <template>
-  <AppHeader />
-  <router-view>
-
-  </router-view>
+  <header>
+    <AppHeader />
+  </header>
+ 
+  <main>
+    <router-view>
+    </router-view>
+  </main>
   
 </template>
 
@@ -37,4 +41,6 @@ export default{
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
+
+
 </style>

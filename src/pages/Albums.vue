@@ -7,11 +7,11 @@
     <ul class="">
         <li @click="prevPage" v-if="prevPageUrl">
             <i class="fa-solid fa-angle-left"></i>
-            <p>Previous</p>
+            <p class="fs-5">Previous</p>
         </li>
         <li @click="nextPage" v-if="nextPageUrl">
             <i class="fa-solid fa-angle-right"></i>
-            <p>Next</p>
+            <p class="fs-5">Next</p>
         </li>
     </ul>
   </template>
