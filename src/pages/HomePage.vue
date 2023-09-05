@@ -1,7 +1,7 @@
 <template >
     <div>
        
-        <h5 style="color:rgb(44, 59, 185)">
+        <h5 >
             Storia
         </h5>
         <p class="text-start mb-5 " >
@@ -12,7 +12,7 @@
             scellini[3] (circa 75 euro al cambio del 2005). Andava a 78 giri al minuto e si riproduceva al fonografo.
             Nel 1948 la Columbia Records ha prodotto il primo Long playing a 12 pollici e 33 1⁄3 giri al minuto.        
         </p>
-        <h5 style="color:rgb(44, 59, 185)">
+        <h5>
             Caratteristiche
         </h5>
         <p class="text-start">

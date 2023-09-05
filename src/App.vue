@@ -1,13 +1,11 @@
 <script >
 import AppHeader from './components/AppHeader.vue'
-//import SingleAlbum from './components/SingleAlbum.vue';
 
 export default{
 
   name :'App',
   components: {
     AppHeader,
-    //SingleAlbum,
   }
 }
 

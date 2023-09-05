@@ -63,7 +63,7 @@
             
   
       created(){
-          this.getAlbums();
+          this.getAlbums(this.apiUrl);
       }
 
 
